@@ -1,16 +1,16 @@
 <div style="width: 100%; display:block;">
-<h2>{{ trans('labels.back') }}</h2>
+<h2>Có liên hệ mới từ app</h2>
 <p>
 	<strong>
-   	{{ trans('labels.HiAdmin') }}!
+   	Xin chào admin!
    	</strong><br><br>
     
 	Tên: {{ $data['name'] }}<br>
-	Tuổi: {{ $data['email'] }}<br><br>
+	Tuổi: {{ $data['email'] }}<br>
 	Điện thoại: {{ $data['phone'] }}<br><br>
 	
-	{{ $data['message'] }}<br><br>
-	<strong>{{ trans('labels.Sincerely') }},</strong><br>
-	{{ trans('labels.ecommerceAppTeam') }}
+	Nội dung: {{ $data['message'] }}<br><br>
+	<strong>Trân trọng,</strong><br>
+	ACIF App Team
 </p>
 </div>
