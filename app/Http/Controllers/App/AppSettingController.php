@@ -127,7 +127,7 @@ class AppSettingController extends Controller
             $responseData = ['success' => '1', 'data' => '',  'message' => 'Message has been sent successfully!'];
             $categoryResponse = json_encode($responseData);
             Mail::send('/mail/contactUs', ['data' => $data], function ($m) use ($data) {
-                $m->to($data['adminEmail'])->subject(Lang::get('labels.contactUsTitle'))->getSwiftMessage()
+                $m->to($data['adminEmail'])->subject(\Lang::get('labels.contactUsTitle'))->getSwiftMessage()
                     ->getHeaders()
                     ->addTextHeader('x-mailgun-native-send', 'true');
             });
