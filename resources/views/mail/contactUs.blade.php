@@ -5,8 +5,9 @@
    	{{ trans('labels.HiAdmin') }}!
    	</strong><br><br>
     
-	{{ trans('labels.Name') }}: {{ $data['name'] }}<br>
-	{{ trans('labels.Email') }}: {{ $data['email'] }}<br><br>
+	Tên: {{ $data['name'] }}<br>
+	Tuổi: {{ $data['email'] }}<br><br>
+	Điện thoại: {{ $data['phone'] }}<br><br>
 	
 	{{ $data['message'] }}<br><br>
 	<strong>{{ trans('labels.Sincerely') }},</strong><br>

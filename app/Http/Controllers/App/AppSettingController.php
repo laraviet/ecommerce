@@ -111,6 +111,7 @@ class AppSettingController extends Controller
     {
         $name = $request->name;
         $email = $request->email;
+        $phone = $request->phone;
         $message = $request->message;
         $consumer_data = [];
         $consumer_data['consumer_key'] = request()->header('consumer-key');
@@ -123,7 +124,7 @@ class AppSettingController extends Controller
 
         if ($authenticate == 1) {
             $setting = $this->getSetting();
-            $data = ['name' => $name, 'email' => $email, 'message' => $message, 'adminEmail' => $setting['contact_us_email']];
+            $data = ['name' => $name, 'email' => $email, 'phone' => $phone, 'message' => $message, 'adminEmail' => $setting['contact_us_email']];
             $responseData = ['success' => '1', 'data' => '',  'message' => 'Message has been sent successfully!'];
             $categoryResponse = json_encode($responseData);
             Mail::send('/mail/contactUs', ['data' => $data], function ($m) use ($data) {
