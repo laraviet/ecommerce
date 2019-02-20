@@ -185,7 +185,7 @@ class MyProductController extends Controller
 				->where('products_description.language_id','=', $language_id)
 				->whereBetween('products.products_price', [$minPrice, $maxPrice])
 				->where('categories.parent_id','!=', '0');
-				
+
 				if(!empty($request->categories_id)){
 					$data->where('products_to_categories.categories_id','=', $request->categories_id);
 				}
@@ -360,9 +360,9 @@ class MyProductController extends Controller
 			if($type == "flashsale"){ //flashsale
 				$categories->where('flash_sale.flash_status','=', '1')->where('flash_expires_date','>',  $currentDate);
 			}else{
-				$categories->whereNotIn('products.products_id',function($query) {
-							$query->select('flash_sale.products_id')->from('flash_sale');
-						});
+				//$categories->whereNotIn('products.products_id',function($query) {
+				//			$query->select('flash_sale.products_id')->from('flash_sale');
+				//		});
 			}
 			
 			//get single category products
